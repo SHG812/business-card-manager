@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>名刺管理アプリ</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- iOS用のメタタグ -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="名刺管理">
+    
+    <!-- iOS用のアイコン -->
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+    
+    <!-- iOS用のスプラッシュスクリーン -->
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1536-2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1125-2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-750-1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-640-1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    
+    <!-- テーマカラー -->
+    <meta name="theme-color" content="#3498db">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>名刺管理ソフト</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="card-form">
+                <h2>新しい名刺を追加</h2>
+                <form id="card-form">
+                    <div class="form-group">
+                        <label for="name">名前</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">役職</label>
+                        <input type="text" id="position">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">電話番号</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">住所</label>
+                        <input type="text" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="note">メモ</label>
+                        <textarea id="note"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="meeting-date">初回面会日</label>
+                        <input type="date" id="meeting-date">
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">保存</button>
+                        <button type="reset" class="btn btn-secondary">リセット</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-list">
+                <h2>名刺一覧</h2>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="検索...">
+                </div>
+                <div id="cards-container"></div>
+            </div>
+        </div>
+        
+        <div id="card-detail-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="card-detail-content"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
