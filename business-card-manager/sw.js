@@ -1,15 +1,16 @@
 // Service Worker for Business Card Manager App
 
 const CACHE_NAME = 'business-card-manager-v1';
+const BASE_PATH = '/business-card-manager';  // GitHubリポジトリ名と一致させる
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/app.js',
-  '/manifest.json',
-  '/icons/apple-icon-180.png',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  `${BASE_PATH}/`,
+  `${BASE_PATH}/index.html`,
+  `${BASE_PATH}/css/styles.css`,
+  `${BASE_PATH}/js/app.js`,
+  `${BASE_PATH}/manifest.json`,
+  `${BASE_PATH}/icons/apple-icon-180.png`,
+  `${BASE_PATH}/icons/icon-192.png`,
+  `${BASE_PATH}/icons/icon-512.png`
 ];
 
 // Install Service Worker
