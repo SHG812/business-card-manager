@@ -310,9 +310,13 @@ class UIController {
 document.addEventListener('DOMContentLoaded', () => {
     new UIController();
     
-    // Register Service Worker for PWA
+// Initialize application when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new UIController();
+
+    // Register Service Worker for PWA (GitHub Pages 対応)
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/business-card-manager/sw.js')
             .then(registration => {
                 console.log('Service Worker registered with scope:', registration.scope);
             })
@@ -321,3 +325,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 });
+
